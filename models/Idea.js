@@ -18,36 +18,7 @@ const ideaSchema = new mongoose.Schema({
     required: [true, 'Idea description is required'],
     trim: true
   },
-  status: {
-    type: String,
-    enum: ['pending', 'approved', 'rejected'],
-    default: 'pending'
-  },
-  tags: [{
-    type: String,
-    trim: true
-  }],
-  likes: {
-    type: Number,
-    default: 0
-  },
-  comments: [{
-    text: {
-      type: String,
-      required: true,
-      trim: true
-    },
-    username: {
-      type: String,
-      required: true,
-      trim: true
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now
-    }
-  }]
-}, {
+  },{
   timestamps: true
 });
 

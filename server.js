@@ -30,12 +30,12 @@ const apiLimiter = rateLimit({
 });
 
 // Middlewares
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // بيجهز الريكوست انه الفرونت يقدر يتعامل معاه
+app.use(express.json()); //automatically parses the JSON string into a JavaScript object
 app.use('/api/ideas', apiLimiter);
 app.use('/api/auth', authLimiter);
 
-// Routes
+
 app.use('/api/auth', authRoutes);
 app.use('/api/ideas', ideaRoutes);
 app.use('/api/admin', auth, adminRoutes);
